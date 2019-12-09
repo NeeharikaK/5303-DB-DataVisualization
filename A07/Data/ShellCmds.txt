@@ -1,0 +1,33 @@
+
+// MongoDB shell commands
+// Filtering data in airports collection
+
+
+
+// Removes spaces in the field name
+
+db.airports.update({}, {$rename: {" latitude": "latitude"}}, false, true);
+
+
+
+// converting data type to Float
+
+db.airports.find().forEach( function (x) {
+  x.latitude = parseFloat(x.latitude);
+  db.airports.save(x);
+});
+
+
+
+// Removes spaces in the field name
+
+db.airports.update({}, {$rename: {" longitude": "longitude"}}, false, true);
+
+
+
+// converting data type to Float
+
+db.airports.find().forEach( function (x) {
+  x.longitude = parseFloat(x.longitude);
+  db.airports.save(x);
+});
