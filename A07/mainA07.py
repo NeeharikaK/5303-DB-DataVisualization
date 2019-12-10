@@ -11,7 +11,7 @@ from geo import get_volcanos
 
 
 if __name__ == '__main__':
-    mapbox_style = "mapbox://styles/shaz13/cjiog1iqa1vkd2soeu5eocy4i"
+    mapbox_style = "mapbox://styles/neeharikak/ck3yt0g624vwr1clm0itq8t5r"
 
     airLats,airLons = get_airports()
     earthLats, earthLons = get_earthquakes()
