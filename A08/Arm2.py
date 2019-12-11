@@ -24,7 +24,7 @@ fig.add_trace(go.Scattermapbox(
                                     lat = lats,
                                     lon = lons,
                                     mode = "markers",   
-                                    marker = {"size":[30, 30, 30],
+                                    marker = {"size":[30, 20, 10],
                                     "color":["Red", "Orange", "Yellow"]}
                                     )
                                 )
