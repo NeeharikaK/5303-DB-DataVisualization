@@ -46,3 +46,4 @@ fig.update_layout(
 
 fig.show()
 plotly.offline.plot(fig, filename='listvolcanos.html')
+
