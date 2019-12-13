@@ -1,0 +1,13 @@
+//
+UPDATE A06_airport SET location = Point(longitude,latitude)
+
+//
+SELECT SUM(ST_Distance_Sphere(b.Location,b1.Location))/500 as Totaldistance FROM A06_routes a,A06_airports b,A06_airports b1 WHERE b.IATA=a.SourceAirportID and b1.IATA = a.DestinationAirportID
+
+
+//Result
+//in miles
+690865467260.9998
+
+//in kilometers
+429283766257.4347
