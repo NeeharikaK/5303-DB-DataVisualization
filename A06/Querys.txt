@@ -1,13 +1,24 @@
 //
 UPDATE A06_airport SET location = Point(longitude,latitude)
 
-//
+//question 7
+7. How long to fly all routes, appended end to end. This will require the routes table. So determine the total length of time it would require to travel all routes (assume 500 mph travel speed).
+
+//query
 SELECT SUM(ST_Distance_Sphere(b.Location,b1.Location))/500 as Totaldistance FROM A06_routes a,A06_airports b,A06_airports b1 WHERE b.IATA=a.SourceAirportID and b1.IATA = a.DestinationAirportID
 
 
 //Result
+
 //in miles
 690865467260.9998
 
 //in kilometers
 429283766257.4347
+
+//Question 5
+5. Random Countries. Choose N random countries and create a flight path that goes through all of them.
+
+//query
+SELECT T0.*,T1.* FROM (SELECT T0.*,T1.`name`,T1.lat,T1.lon FROM  (SELECT T0.AirlineID,T0.`Airlie Name`,T0.SourceAirportID,T0.DestinationAirportID,T0.Country ,T1. `code`  FROM     (SELECT T0.AirlineID,T1.`Name` AS `Airlie Name`,T0.SourceAirportID,T0.DestinationAirportID,T1.Country    FROM A06_routes T0     JOIN A06_airlines T1    ON T0.AirlineID = T1.`Airline ID`) T0   JOIN A06_countries T1    ON T0.Country = T1.name) T0 JOIN A06_cities T1 ON T0.`code` = T1.country) T0 JOIN A06_airports T1 ON T0.`code`= T1.Country WHERE T1.Country = 'Afghanistan'
+
