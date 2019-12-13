@@ -2,7 +2,7 @@
 
 error_reporting(-1);
 
-$conn = mysqli_connect('localhost', 'diekhoff', '', 'diekhoff');
+$conn = mysqli_connect('localhost', 'kasarla', 'ab0V7yqPzoJL', 'kasarla');
 if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }else{
